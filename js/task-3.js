@@ -1,11 +1,8 @@
-document.getElementById('name-input').addEventListener('input', function () {
-    const nameInput = document.getElementById('name-input');
-    const nameOutput = document.getElementById('name-output');
-    const trimmedName = nameInput.ariaValueMax.trim();
-    
-    if (trimmedName === "") {
-        nameOutput.textContent = "Anonymous";
-    } else {
-        nameOutput.textContent = trimmedName;
+document.querySelector('#name-input').addEventListener('input', e => {
+    if (e.currentTarget.value != '' && e.currentTarget.value != ' ') {
+        document.querySelector('#name-output').textContent = e.currentTarget.value.trim();
     }
-})
+    else {
+        document.querySelector('#name-output').textContent = 'Anonymous';
+    }
+});
